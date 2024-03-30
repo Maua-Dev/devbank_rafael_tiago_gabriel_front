@@ -1,0 +1,83 @@
+name: AWS CD
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+jobs:
+  DeployToAWS:
+    environment: 
+      name: ${{ github.ref_name }}
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+        - uses: actions/checkout@v2
+        - name: Setup AWS Credentials
+          uses: aws-actions/configure-aws-credentials@v2
+          with:
+            aws-region: sa-east-1
+            role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GithubActionsRole
+            role-session-name: github-action
+        - name: Use Node.js 18.x
+          uses: actions/setup-node@v3
+          with:
+            node-version: 18.x
+        - name: Setting stage and stack name
+          run: |
+            echo "STAGE=${{ github.ref_name }}" 
+            PROJECT_NAME=$(echo ${{ github.event.repository.name }} | sed -e 's/[-_]/ /g' | awk '{for(i=1;i<=NF;i++)sub(/./,toupper(substr($i,1,1)),$i)}1' | sed -e 's/ //g')
+            echo "PROJECT_NAME=${PROJECT_NAME}"
+            echo "STACK_NAME=${PROJECT_NAME}StackFront${{github.ref_name}}"
+
+            echo "STACK_NAME=${PROJECT_NAME}StackFront${{github.ref_name}}" >> $GITHUB_ENV
+            echo "PROJECT_NAME=${PROJECT_NAME}Front" >> $GITHUB_ENV
+        - name: Installing Dependencies
+          run: |
+            cd iac
+            npm install
+            npm install -g aws-cdk
+        - name: Build and Export
+          run: |
+            npm install
+            npm run build
+        - name: Setup envs
+          run: |
+            echo AWS_REGION=sa-east-1 >> $GITHUB_ENV
+            echo AWS_ACCOUNT_ID=${{ secrets.AWS_ACCOUNT_ID }} >> $GITHUB_ENV
+            echo STACK_NAME=${{ env.STACK_NAME }} >> $GITHUB_ENV
+            echo GITHUB_REF_NAME=${{ github.ref_name }} >> $GITHUB_ENV
+            echo ACM_CERTIFICATE_ARN=${{ secrets.DEVMAUA_ACM_CERTIFICATE_ARN }} >> $GITHUB_ENV
+            echo HOSTED_ZONE_ID=${{ secrets.DEVMAUA_HOSTED_ZONE_ID }} >> $GITHUB_ENV
+            if [ -z "${{ vars.ALTERNATIVE_DOMAIN_NAME }}" ]; then
+              echo ALTERNATIVE_DOMAIN_NAME=$(echo ${{ env.PROJECT_NAME }} | tr '[:upper:]' '[:lower:]').devmaua.com >> $GITHUB_ENV
+            else
+              echo ALTERNATIVE_DOMAIN_NAME=${{ vars.ALTERNATIVE_DOMAIN_NAME }} >> $GITHUB_ENV
+            fi
+            
+            echo ${{ env.AWS_REGION }}
+            echo ${{ env.AWS_ACCOUNT_ID }}
+            echo ${{ env.STACK_NAME }}
+            echo ${{ env.GITHUB_REF_NAME }}
+            echo ${{ env.ACM_CERTIFICATE_ARN }}
+            echo ${{ env.HOSTED_ZONE_ID }}
+            echo ${{ env.ALTERNATIVE_DOMAIN_NAME }}
+
+        - name: Deploy with CDK
+          run: |
+            cd iac
+            cdk synth
+            cdk deploy --require-approval never 
+        - name: Set CloudFront ID
+          run: |
+            CLOUD_FRONT_ID=$(aws cloudformation --region ${{env.AWS_REGION}} describe-stacks --stack-name ${{env.STACK_NAME}} --query "Stacks[0].Outputs[?OutputKey=='${{env.PROJECT_NAME}}DistributionId${{github.ref_name}}'].OutputValue" --output text)
+            echo "CLOUD_FRONT_ID='$CLOUD_FRONT_ID'" >> $GITHUB_ENV
+        - name: Set AWS Bucket
+          run: |
+            AWS_BUCKET=$(aws cloudformation --region ${{env.AWS_REGION}} describe-stacks --stack-name ${{env.STACK_NAME}} --query "Stacks[0].Outputs[?OutputKey=='${{env.PROJECT_NAME}}BucketName${{github.ref_name}}'].OutputValue" --output text)
+            echo "AWS_BUCKET='$AWS_BUCKET'" >> $GITHUB_ENV
+        - name: Upload to S3
+          run: aws s3 cp dist s3://${{env.AWS_BUCKET}}/ --recursive --region sa-east-1
+        - name: Clear CDN cache
+          run: aws cloudfront create-invalidation --distribution-id ${{env.CLOUD_FRONT_ID}} --paths "/*" --region us-east-1
