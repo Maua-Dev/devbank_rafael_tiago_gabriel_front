@@ -1,0 +1,48 @@
+:root {
+    background-color: #0e33ad;
+}
+
+.centro {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    width: 80%;
+}
+
+header {
+    width: 100%;
+    height: 30%;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 15%;
+
+}
+
+.centered-container{
+    text-align: center;
+    margin-top: 50px;
+}
+.input-box {
+    width: 90%;
+    height: 50px;
+    padding: auto;
+    font-size: 28px;
+    border-radius: 16px;
+    border: none;
+}
+
+button{
+    margin-top: 40px;
+    width: 100px;
+    height: 60px;
+    border-radius: 16px;
+    border: none;
+    background-color: #0E65AD;
+    transition: .35s;
+}
+
+button:hover {
+    background-color: #4F66B3;
+}
