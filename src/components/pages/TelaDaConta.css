@@ -1,23 +1,14 @@
 :root {
-    background-color: #0e33ad;
+    background-color: #1c14a4;
 }
 
-.centro {
+.centro-imagem {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: auto;
-    width: 80%;
-}
-
-header {
-    width: 100%;
-    height: 30%;
-    overflow: hidden;
-    text-align: center;
-    box-sizing: border-box;
     margin-top: 15%;
-
+    width: 50%;
+    margin-bottom: 5%;
 }
 
 .centered-container{
@@ -25,24 +16,26 @@ header {
     margin-top: 50px;
 }
 .input-box {
-    width: 90%;
+    width: 80%;
     height: 50px;
     padding: auto;
     font-size: 28px;
-    border-radius: 16px;
+    border-radius: 8px;
     border: none;
+    background-color: #d7d5fe;
 }
 
 button{
     margin-top: 40px;
     width: 100px;
     height: 60px;
-    border-radius: 16px;
+    border-radius: 8px;
     border: none;
-    background-color: #0E65AD;
+    background-color: #d7d5fe;
     transition: .35s;
 }
 
 button:hover {
-    background-color: #4F66B3;
+    background-color: #928dfc;
+    cursor: pointer;
 }

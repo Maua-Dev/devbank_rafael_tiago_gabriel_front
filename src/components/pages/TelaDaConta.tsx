@@ -1,16 +1,18 @@
 import './TelaDaConta.css'
+import { Link } from "react-router-dom"
 
 function TelaDaConta() {
   
 
     return (
       <>
-        <header><img src="src/img/image.webp" width={1200} className='centro' /></header>
+        <header></header>
           <div className='centered-container'>
+            <div><img src="src/img/image.webp" className='centro-imagem' /></div>
             <form>
-              <input name="Coloque a API" className='input-box' />
+              <input name="" className='input-box' />
             </form>
-            <button> Acessar </button>
+            <Link to="/home"><button> Acessar </button></Link>
           </div>
       </>
     )
