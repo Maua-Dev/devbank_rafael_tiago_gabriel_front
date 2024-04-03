@@ -6,7 +6,7 @@ export function AppRouter() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route Component = {TelaDaConta} path="/login" element={<TelaDaConta />} />
+                <Route Component = {TelaDaConta} path="/" element={<TelaDaConta />} />
                 <Route Component = {TelaInicial} path="/home" element={<TelaInicial />} />
             </Routes>
         </BrowserRouter>
