@@ -1,0 +1,43 @@
+.centro-imagem {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    width: 40%;
+}
+.container{
+    overflow: hidden;
+    text-align: center;
+    background-color: rgb(75, 134, 210);
+    border-radius: 8px;
+}
+.botoes-banco{
+    width: 23%;
+    margin-right: 10px;
+    margin-top: 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: #d7d5fe;
+    transition: .35s;
+    font-style:normal;
+}
+.input-box {
+    width: 80%;
+    margin-top: 5%;
+    height: 50px;
+    padding: auto;
+    font-size: 28px;
+    border-radius: 8px;
+    border: none;
+    background-color: #d7d5fe;
+}
+.input-box-saldo{
+    width: 30%;
+    margin-top: 0.2%;
+    height: 50px;
+    padding: auto;
+    font-size: 28px;
+    border-radius: 8px;
+    border: none;
+    background-color: #d7d5fe;
+}

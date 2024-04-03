@@ -2,13 +2,13 @@
     background-color: #1c14a4;
 }
 
-.centro-imagem {
+.centro-imagem-login {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15%;
-    width: 50%;
-    margin-bottom: 5%;
+    margin-top: 10%;
+    width: 55%;
+    margin-bottom: 1%;
 }
 
 .centered-container{
@@ -25,7 +25,7 @@
     background-color: #d7d5fe;
 }
 
-button{
+.botao-login{
     margin-top: 40px;
     width: 100px;
     height: 60px;
@@ -33,6 +33,8 @@ button{
     border: none;
     background-color: #d7d5fe;
     transition: .35s;
+    font-style:normal;
+    
 }
 
 button:hover {

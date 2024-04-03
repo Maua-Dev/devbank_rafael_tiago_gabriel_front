@@ -9,11 +9,11 @@ function TelaDaConta() {
       <>
         <header></header>
           <div className='centered-container'>
-            <div><img src="src/img/image.webp" className='centro-imagem' /></div>
+            <div><img src="src/img/image.webp" className='centro-imagem-login' /></div>
             <form>
               <input name="" className='input-box' />
             </form>
-            <Link to="/home"><button> Acessar </button></Link>
+            <Link to="/home"><button className='botao-login'> Acessar </button></Link>
           </div>
       </>
     )
