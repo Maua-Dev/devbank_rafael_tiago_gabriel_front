@@ -1,25 +1,37 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import "./TelaInicial.css"
-// import axios from "axios"
-// import { useEffect } from "react"
+import axios from "axios"
+import { useEffect, useState } from "react"
 
 function Telainicial() {
   
-  // const [name, setName] = useState<string>()
+  const [name,setName] = useState<string>()
+  const [agency,setAgencia] = useState<string>()
+  const [account,setConta] = useState<string>()
+  const [current_balance,setSaldo] = useState<string>()
 
-  // const api = "URL context"
+   const api = "https://r2tcz6zsokynb72jb6o4ffd5nm0ryfyz.lambda-url.us-west-2.on.aws/"
 
-  //const requestApi = async () => {
-  //   const response = axios.get(api)
-  //   setName(response.data.name)
-  //}
-  // useEffect(() => {
-  //    requestApi()
-  // }, [])
+  const requestApi = async () => {
+     const response = await axios.get(api)
+     setName(response.data.name)
+     setAgencia(response.data.agency)
+     setConta(response.data.account)
+     setSaldo(response.data.current_balance)
+  }
+   useEffect(() => {
+      requestApi()
+   }, [])
 
     return (
       <>
       <header>
+      <div>
+          <h2 className="dados-conta">{name}</h2>
+          <h2 className="dados-conta">{agency}</h2>
+          <h2 className="dados-conta">{account}</h2>
+          <h2 className="dados-conta">{current_balance}</h2>
+        </div>
         <img src="src/img/image.webp" className='centro-imagem'/>
       </header>
     
@@ -33,7 +45,6 @@ function Telainicial() {
           <button className="botoes-banco">Sacar</button>
           <button className="botoes-banco">Depositar</button>
           <button className="botoes-banco">transações</button>
-          <input type="text" className="input-box"/>
 
       <Link to="/"><button name="Coloque a API">Voltar</button></Link>
       </div>
@@ -44,37 +55,4 @@ function Telainicial() {
   export default Telainicial
   
 
-
-
-//CONTEXT
-
-// type VariaveisGlobaisType = {
-//   api: string,
-//   nome: string,
-//   agencia: string,
-//   conta: string,
-//   credito: number,
-
-//   setApi: React.Dispatch<React.SetStateAction<string>>;
-//   setNome: React.Dispatch<React.SetStateAction<string>>;
-//   setAgencia: React.Dispatch<React.SetStateAction<string>>;
-//   setConta: React.Dispatch<React.SetStateAction<string>>;
-//   setCredito: React.Dispatch<React.SetStateAction<string>>;
-
-// } 
-// const defaultVariaveisGlobais: VariaveisGlobaisType = {
-//   api: "",
-//   nome: "",
-//   agencia: "",
-//   conta: "",
-//   credito: 0,
-
-//   setApi: () => {},
-//   setNome: () => {},
-//   setAgencia: () => {},
-//   setConta: () => {},
-//   setCredito: () => {}
-// }
-
-// export const VariaveisGlobais = createContext <VariaveisGlobaisType>(defaultVariaveisGlobais);
 

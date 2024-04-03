@@ -6,6 +6,11 @@
     margin-bottom: 1%;
     width: 30%;
 }
+.dados-conta{
+    text-align: right;
+    margin-top: 2;
+    color: white;
+}
 .container{
     overflow: hidden;
     text-align: center;
