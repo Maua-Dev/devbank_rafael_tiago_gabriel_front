@@ -13,7 +13,8 @@
 
 .centered-container{
     text-align: center;
-    margin-top: 50px;
+    margin-top: 10%;
+
 }
 .input-box {
     width: 80%;
@@ -30,7 +31,9 @@
     width: 100px;
     height: 60px;
     border-radius: 8px;
-    border: none;
+    border-style: solid;
+    border-width: 6px;
+    border-color: #a09de6;
     background-color: #d7d5fe;
     transition: .35s;
     font-style:normal;
@@ -38,6 +41,7 @@
 }
 
 button:hover {
-    background-color: #928dfc;
+    background-color: #a09de6;
     cursor: pointer;
+    border-color: #d7d5fe;
 }
