@@ -1,15 +1,27 @@
+
+.Header {
+    width: 50%;
+    height: 10%;
+
+}
+
+.box-dados-conta {
+    text-align: right;
+}
 .centro-imagem {
     display: block;
     text-align: left;
     margin-left: 1%;
     margin-top: 1%;
     margin-bottom: 1%;
-    width: 30%;
+    width: 60%;
+    float: left;
 }
 .dados-conta{
     text-align: right;
-    margin-top: 2;
+    margin-top: 1%;
     color: white;
+    font-size: small;
 }
 .container{
     overflow: hidden;
@@ -21,6 +33,10 @@
     width: 23%;
     height: 500px;
     margin: 2%;
+    font-size: 28;
+    font-family: "Lexend";
+    font-size: 40px;
+    color: #a09de6;
     border-radius: 8px;
     border-width: 20px;
     border-color: #a09de6;

@@ -26,13 +26,17 @@ function Telainicial() {
     return (
       <>
       <header>
-      <div>
-          <h2 className="dados-conta">{name}</h2>
-          <h2 className="dados-conta">{agency}</h2>
-          <h2 className="dados-conta">{account}</h2>
-          <h2 className="dados-conta">{current_balance}</h2>
+        <div>
+          <div className="Header">
+            <img src="src/img/image.webp" className='centro-imagem'/>
+          </div>
+          <div className="box-dados-conta">
+            <h2 className="dados-conta">{name}</h2>
+            <h2 className="dados-conta">{agency}</h2>
+            <h2 className="dados-conta">{account}</h2>
+            <h2 className="dados-conta">{current_balance}</h2>
+          </div>
         </div>
-        <img src="src/img/image.webp" className='centro-imagem'/>
       </header>
     
       <div className="container">
@@ -44,7 +48,7 @@ function Telainicial() {
 
           <button className="botoes-banco">Sacar</button>
           <button className="botoes-banco">Depositar</button>
-          <button className="botoes-banco">transações</button>
+          <button className="botoes-banco">Transações</button>
 
       <Link to="/"><button name="Coloque a API">Voltar</button></Link>
       </div>
