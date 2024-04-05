@@ -1,23 +1,23 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import './TelaDaConta.css'
 import { Link } from "react-router-dom"
-
+import { ValoresDaConta } from '../../contexts/assessment-context'
 
 function TelaDaConta() {
 
-  const [, setApi] = useState<string>("")
+  const { setApi } = useContext(ValoresDaConta)
 
     return (
-      <>
-        <header></header>
+  
+      <div className='TelaDaConta'>
           <div className='centered-container'>
-            <div><img src="src/img/image.webp" className='centro-imagem-login' /></div>
-            <form>
-              <input name="" className='input-box' onChange={(event) => setApi(event.target.value)}/>
-            </form>
+            <header>
+              <img src="src/img/image.webp" className='centro-imagem-login' />
+            </header>
+            <input name="" className='input-box' onChange={(event) => setApi (event.target.value)}/>
             <Link to="/home"><button className='botao-login'> Logar </button></Link>
           </div>
-      </>
+      </div>
     )
   }
   

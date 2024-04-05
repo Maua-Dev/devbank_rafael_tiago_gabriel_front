@@ -1,24 +1,21 @@
 import { Link } from "react-router-dom"
 import "./TelaInicial.css"
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useContext, useEffect } from "react"
+import { ValoresDaConta } from "../../contexts/assessment-context"
 
 function Telainicial() {
-  
-  const [name,setName] = useState<string>()
-  const [agency,setAgencia] = useState<string>()
-  const [account,setConta] = useState<string>()
-  const [current_balance,setSaldo] = useState<string>()
 
-   const api = "https://r2tcz6zsokynb72jb6o4ffd5nm0ryfyz.lambda-url.us-west-2.on.aws/"
+   const { setName, setAgency, setConta, setSaldo, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
 
   const requestApi = async () => {
-     const response = await axios.get(api)
+     const response = await axios.get( api )
      setName(response.data.name)
-     setAgencia(response.data.agency)
+     setAgency(response.data.agency)
      setConta(response.data.account)
      setSaldo(response.data.current_balance)
   }
+
    useEffect(() => {
       requestApi()
    }, [])
@@ -52,13 +49,14 @@ function Telainicial() {
         </div>
 
           <div className="box-acoes">
-            <button className="botoes-banco">Sacar</button>
-            <button className="botoes-banco">Depositar</button>
-            <button className="botoes-banco">Transações</button>
+            <button className="botoes-banco">Sacar <img src="src/img/sacar.png" width={160}/> </button>
+            <button className="botoes-banco">Depositar <img src="src/img/depositar.png" width={160}/> </button>
+            <button className="botoes-banco">Transações <img src="src/img/transacao.png" width={160}/> </button>
           </div>
 
-      <Link to="/"><button name="Coloque a API">Voltar</button></Link>
       <text type="text" className="input-box-saldo"/>
+      <><br/></>
+      <Link to="/"><button name="Coloque a API">Voltar</button></Link>
       </div>
       </>
     )

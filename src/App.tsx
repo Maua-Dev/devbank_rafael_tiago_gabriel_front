@@ -1,12 +1,12 @@
 import { AppRouter } from "./AppRouter"
-import { AssessmentProvider } from "./contexts/assessment-context"
+import { DadosConta } from "./contexts/assessment-context"
 
 function App() {
 
   return (
-    <AssessmentProvider>
+    <DadosConta>
       <AppRouter />
-    </AssessmentProvider>
+    </DadosConta>
   )
 }
 
