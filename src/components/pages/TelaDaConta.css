@@ -48,4 +48,5 @@ button:hover {
     cursor: pointer;
     border-color: #d7d5fe;
     color: #d7d5fe;
+    transform: scale(1.05);
 }

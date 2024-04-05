@@ -1,41 +1,95 @@
-
 .Header {
-    width: 50%;
-    height: 10%;
-
+    height: 120px;
 }
 
-.box-dados-conta {
-    text-align: right;
-}
 .centro-imagem {
     display: block;
     text-align: left;
     margin-left: 1%;
     margin-top: 1%;
     margin-bottom: 1%;
-    width: 60%;
+    width: 28%;
     float: left;
 }
-.dados-conta{
+
+.box-dados-conta {
     text-align: right;
+    height: 70px;
+    padding: 5px;
+    width: 160px;
+    float: right;
+    margin-right: 10%;
+    justify-items: center;
     margin-top: 1%;
-    color: white;
-    font-size: small;
-}
-.container{
-    overflow: hidden;
-    text-align: center;
-    background-color: rgb(75, 134, 210);
+    border: none;
+    background-color: #d7d5fe;
     border-radius: 8px;
 }
+
+.dados-conta{
+    text-align: left;
+    color: #a09de6;
+    font-size: 16px;
+    font-family: "Lexend";
+    word-spacing: 4px;
+}
+
+.container-botoes-saldo{
+    text-align: center;
+    background-color: rgb(75, 134, 210);
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 80%;
+}
+
+.box-saldo {
+    display: flex;
+    height: 80px;
+    width: 840px;
+    align-items: center;
+    background-color: #d7d5fe;
+    border: none;
+    border-radius: 8px;
+}
+
+.oq-fazer {
+    margin-left: 2%;
+    font-family: "Lexend";
+    color: #a09de6;
+    width: 50%;
+    text-align: left;
+    font-size: 22px;
+
+}
+
+.saldo-box {
+    background-color: #a09de6;
+    width: 50%;
+    margin: 1%;
+    border-radius: 8px;
+}
+
+.saldo{
+    color: #d7d5fe;
+    margin-left: 2%;
+    font-family: "Lexend";
+    text-align: left;
+}
+
+.box-acoes{
+    width: 100%;
+    height: 100%;
+}
+
 .botoes-banco{
-    width: 23%;
+    width: 20%;
     height: 500px;
     margin: 2%;
+
     font-size: 28;
     font-family: "Lexend";
-    font-size: 40px;
+    font-size: 30px;
     color: #a09de6;
     border-radius: 8px;
     border-width: 20px;
@@ -44,6 +98,7 @@
     background-color: #d7d5fe;
     transition: .35s;
 }
+
 .input-box {
     width: 80%;
     margin-top: 5%;
@@ -54,6 +109,7 @@
     border: none;
     background-color: #d7d5fe;
 }
+
 .input-box-saldo{
     width: 30%;
     margin-top: 0.2%;

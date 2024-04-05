@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 function TelaDaConta() {
 
-  const [api, setApi] = useState<string>("")
+  const [, setApi] = useState<string>("")
 
     return (
       <>
