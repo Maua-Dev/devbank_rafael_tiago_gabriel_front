@@ -8,7 +8,7 @@
 
 body {
     background: rgb(2,0,36);
-    background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 57%, rgba(47,0,215,1) 100%);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 34%, rgba(47,0,215,1) 94%);
     height: 100%;
     width: 100%;
 }
@@ -32,11 +32,11 @@ body {
     text-align: right;
     height: 70px;
     padding: 5px;
-    width: 160px;
+    width: 20%;
     float: right;
     margin-right: 1%;
     border: none;
-    background-color: #d7d5fe;
+    background-color: #1D1DFF;
     border-radius: 8px;
 }
 
@@ -44,7 +44,7 @@ body {
     text-align: left;
     margin-top: auto;
     margin-bottom: auto;
-    color: #a09de6;
+    color: white;
     font-size: 16px;
     font-family: "Lexend";
     word-spacing: 4px;
@@ -52,13 +52,13 @@ body {
 }
 
 .container-botoes-saldo{
-    background-color: rgb(26, 20, 73);
+    background-color: rgb(193, 229, 255);
     display: flex;
     flex-direction: column;
-    text-align: center;
-    place-items: center;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 84%;
+    height: 80%;
 }
 
 .box-saldo {
@@ -66,7 +66,7 @@ body {
     height: 12%;
     width: 60%;
     align-items: center;
-    background-color: #d7d5fe;
+    background-color: #1D1DFF;
     border: none;
     border-radius: 8px;
     margin-top: 1%;
@@ -76,7 +76,7 @@ body {
 .oq-fazer {
     margin-left: 2%;
     font-family: "Lexend";
-    color: #a09de6;
+    color: white;
     width: 50%;
     text-align: left;
     font-size: 22px;
@@ -84,7 +84,7 @@ body {
 }
 
 .saldo-box {
-    background-color: #a09de6;
+    background-color: #68b9ff;
     width: 50%;
     height: 80%;
     margin: 1%;
@@ -94,7 +94,7 @@ body {
 }
 
 .saldo{
-    color: #d7d5fe;
+    color: white;
     margin-left: 2%;
     font-family: "Lexend";
     text-align: left;
@@ -120,19 +120,19 @@ body {
 
     font-family: "Lexend";
     font-size: 30px;
-    color: #a09de6;
+    color: white;
     border-radius: 8px;
     border-width: 20px;
-    border-color: #a09de6;
+    border-color: #5252FF;
     border-style: solid;
-    background-color: #d7d5fe;
+    background-color: #1D1DFF;
     transition: .35s;
 }
 
 .bottom {
     height: 22%;
     width: 100%;
-    align-items: center;
+    text-align: center;
 }
 
 .botao-voltar {
@@ -141,12 +141,26 @@ body {
     border-radius: 8px;
     font-family: "Lexend";
     font-size: 20px;
-    color: #a09de6;
+    color: white;
     border-style: solid;
     border-width: 4px;
-    border-color: #a09de6;
-    background-color: #d7d5fe;
+    border-color: #5252FF;
+    background-color: #1D1DFF;
     transition: .35s;
     font-style:normal;
     margin: 2%;
+}
+
+.botao-voltar:hover {
+    background-color: #ff7c94;
+    cursor: pointer;
+    border-color: #ffacac;
+    transform: scale(1.05);
+}
+
+.botoes-banco:hover {
+    background-color: #ff7c94;
+    cursor: pointer;
+    border-color: #ffacac;
+    transform: scale(1.05);
 }
