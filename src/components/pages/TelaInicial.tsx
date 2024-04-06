@@ -16,24 +16,23 @@ function Telainicial() {
      setSaldo(response.data.current_balance)
   }
 
+
    useEffect(() => {
       requestApi()
    }, [])
 
     return (
-      <>
+      <div className="TelaInicial">
       <header className="Header">
         <div>
-          <div>
-            <img src="src/img/image.webp" className='centro-imagem'/>
-          </div>
-          <div className="box-dados-conta">
-            <h2 className="dados-conta">
-              Nome: {name}<br/>
-              Agência: {agency}<br/>
-              Conta: {account}
-            </h2>
-          </div>
+          <img src="src/img/image.webp" className='centro-imagem'/>
+        </div>
+        <div className="box-dados-conta">
+          <h2 className="dados-conta">
+            Nome: {name}<br/>
+            Agência: {agency}<br/>
+            Conta: {account}
+          </h2>
         </div>
       </header>
     
@@ -53,12 +52,11 @@ function Telainicial() {
             <button className="botoes-banco">Depositar <img src="src/img/depositar.png" width={160}/> </button>
             <button className="botoes-banco">Transações <img src="src/img/transacao.png" width={160}/> </button>
           </div>
-
-      <text type="text" className="input-box-saldo"/>
-      <><br/></>
-      <Link to="/"><button name="Coloque a API">Voltar</button></Link>
+          <div className="bottom">
+            <Link to="/"><button className="botao-voltar">Voltar</button></Link>
+          </div>
       </div>
-      </>
+      </div>
     )
   }
   

@@ -1,11 +1,25 @@
 import { useContext } from 'react'
 import './TelaDaConta.css'
-import { Link } from "react-router-dom"
 import { ValoresDaConta } from '../../contexts/assessment-context'
 
 function TelaDaConta() {
 
-  const { setApi } = useContext(ValoresDaConta)
+  const { api, setApi } = useContext(ValoresDaConta)
+  
+  
+
+  const pegar = () => {
+    const chave =  "https://r2tcz6zsokynb72jb6o4ffd5nm0ryfyz.lambda-url.us-west-2.on.aws/"
+
+    if (api === chave){
+      setApi(chave)
+      window.location.href = "/home"
+    }  
+    else {
+      alert("Coloque a api correta!")
+    }
+  }
+
 
     return (
   
@@ -14,11 +28,11 @@ function TelaDaConta() {
             <header>
               <img src="src/img/image.webp" className='centro-imagem-login' />
             </header>
-            <input name="" className='input-box' onChange={(event) => setApi (event.target.value)}/>
-            <Link to="/home"><button className='botao-login'> Logar </button></Link>
+            <input id="validarApi" name="" className='input-box' onChange={(event) => setApi(event.target.value)}/>
+            <button className='botao-login' onClick={pegar} id="pegar"> Logar </button>
           </div>
       </div>
     )
-  }
+    }
   
   export default TelaDaConta
