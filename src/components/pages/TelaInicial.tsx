@@ -36,26 +36,27 @@ function Telainicial() {
         </div>
       </header>
     
-      <div className="container-botoes-saldo">
+      <div className="janela-acoes">
+        <div className="container-botoes-saldo">
 
-        <div className="box-saldo">
-          <div className="oq-fazer">
-            <h2>O que deseja Fazer?</h2>
+          <div className="box-saldo">
+            <div className="oq-fazer">
+              <h2>O que deseja Fazer?</h2>
+            </div>
+            <div className="saldo-box">
+              <h2 className="saldo">Saldo atual: R$ {current_balance}</h2>
+            </div>
           </div>
-          <div className="saldo-box">
-            <h2 className="saldo">Saldo atual: R$ {current_balance}</h2>
+            <div className="box-acoes">
+              <button className="botoes-banco">Sacar <img src="src/img/sacar.png" width={160}/> </button>
+              <button className="botoes-banco">Depositar <img src="src/img/depositar.png" width={160}/> </button>
+              <button className="botoes-banco">Transações <img src="src/img/transacao.png" width={160}/> </button>
+            </div>
+            <div className="bottom">
+              <Link to="/"><button className="botao-voltar">Voltar</button></Link>
+            </div>
           </div>
         </div>
-
-          <div className="box-acoes">
-            <button className="botoes-banco">Sacar <img src="src/img/sacar.png" width={160}/> </button>
-            <button className="botoes-banco">Depositar <img src="src/img/depositar.png" width={160}/> </button>
-            <button className="botoes-banco">Transações <img src="src/img/transacao.png" width={160}/> </button>
-          </div>
-          <div className="bottom">
-            <Link to="/"><button className="botao-voltar">Voltar</button></Link>
-          </div>
-      </div>
       </div>
     )
   }

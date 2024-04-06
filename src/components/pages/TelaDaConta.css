@@ -61,7 +61,7 @@ body {
     border: none;
     background-color: #7070ff;
     outline: none;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset, rgba(0, 0, 0, 0.539) 0px 2px 4px;
+    box-shadow:  rgba(0, 0, 0, 0.539) 0px 2px 4px;
 }
 
 .botao-login{
@@ -76,7 +76,7 @@ body {
     background-color: #7070ff;
     transition: .35s;
     font-style:normal;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset, rgba(0, 0, 0, 0.539) 0px 2px 4px; ;
+    box-shadow:  rgba(0, 0, 0, 0.539) 0px 2px 4px; ;
 }
 
 .botao-login:hover {
@@ -84,5 +84,5 @@ body {
     cursor: pointer;
     border-color: #ffacac;
     transform: scale(1.01);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset, rgba(0, 0, 0, 0.539) 0px 2px 4px;
+    box-shadow:  rgba(0, 0, 0, 0.539) 0px 2px 4px;
 }
