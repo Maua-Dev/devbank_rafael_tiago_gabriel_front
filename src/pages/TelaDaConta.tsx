@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react'
-import './TelaDaConta.css'
-import { ValoresDaConta } from '../../contexts/assessment-context'
+import '../styles/TelaDaConta.css'
+import { ValoresDaConta } from '../contexts/assessment-context'
 import { useNavigate } from 'react-router-dom'
 
 function TelaDaConta() {
@@ -20,6 +20,7 @@ function TelaDaConta() {
       alert("Coloque a api correta!")
     }
   }
+  
   
   useEffect(() => {
     setApi("")

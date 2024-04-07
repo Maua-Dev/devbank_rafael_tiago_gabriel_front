@@ -54,7 +54,7 @@ body {
 }
 
 .janela-acoes{
-    height: 100%;
+    height: 86%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -71,7 +71,7 @@ body {
     border-radius: 8px;
     gap: 40px;
     width: 98%;
-    height: 80%;
+    height: 96%;
     box-shadow: rgba(0, 0, 0, 0.539) 0px 2px 4px;
 }
 

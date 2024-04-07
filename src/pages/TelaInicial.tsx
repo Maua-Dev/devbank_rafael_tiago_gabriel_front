@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
-import "./TelaInicial.css"
+import "../styles/TelaInicial.css"
 import axios from "axios"
 import { useContext, useEffect } from "react"
-import { ValoresDaConta } from "../../contexts/assessment-context"
+import { ValoresDaConta } from "../contexts/assessment-context"
 
 function Telainicial() {
 

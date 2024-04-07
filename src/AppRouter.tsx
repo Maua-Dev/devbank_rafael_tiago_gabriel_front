@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import TelaDaConta from "./components/pages/TelaDaConta";
-import TelaInicial from "./components/pages/TelaInicial";
+import TelaDaConta from "./pages/TelaDaConta";
+import TelaInicial from "./pages/TelaInicial";
 
 export function AppRouter() {
     return (
