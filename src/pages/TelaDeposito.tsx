@@ -6,7 +6,7 @@ export function TelaDeposito() {
         <body>
             <h1>Tela de Depósito</h1>
             <Link to="/home"><button>Voltar</button></Link>
-            <Card valor={10} quantidade={0}/>
+            <Card valor={10} />
         </body>
     )
 }
