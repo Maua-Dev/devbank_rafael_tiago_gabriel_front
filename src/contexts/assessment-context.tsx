@@ -7,7 +7,7 @@ type ValoresDaContaType = {
     account: string,
     current_balance: number,
 
-    setApi: React.Dispatch<React.SetStateAction<string>>
+    setApi: React.Dispatch<React.SetStateAction<string>>,
     setName: React.Dispatch<React.SetStateAction<string>>,
     setAgency: React.Dispatch<React.SetStateAction<string>>,
     setConta: React.Dispatch<React.SetStateAction<string>>,
@@ -22,10 +22,10 @@ const defaultValoresDaConta: ValoresDaContaType = {
     current_balance: 0,
 
     setApi: ()=> {},
-    setName: ()=> {} ,
-    setAgency: ()=> {} ,
-    setConta: ()=> {} ,
-    setSaldo: ()=> {} ,
+    setName: ()=> {},
+    setAgency: ()=> {},
+    setConta: ()=> {},
+    setSaldo: ()=> {},
 }
 
 export const ValoresDaConta = createContext<ValoresDaContaType>(defaultValoresDaConta);

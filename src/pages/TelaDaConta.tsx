@@ -8,19 +8,16 @@ function TelaDaConta() {
   const { api, setApi } = useContext(ValoresDaConta)
   const navigate = useNavigate()
   
-  
   const pegar = () => {
     const chave =  "https://r2tcz6zsokynb72jb6o4ffd5nm0ryfyz.lambda-url.us-west-2.on.aws/"
     
     if (api === chave){
-      setApi(chave)
       navigate("/home")
-    }  
+    }
     else {
       alert("Coloque a api correta!")
     }
   }
-  
   
   useEffect(() => {
     setApi("")

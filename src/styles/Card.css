@@ -1,0 +1,95 @@
+.quadrado-geral{
+    background-color: white;
+    width: 30%;
+    height: 300px;
+    border-radius: 8px;
+    margin: 5%;
+    display: flow-root;
+}
+
+
+
+
+
+.janela-valor {
+    border-radius: 8px;
+    border: 10px solid #858ef0;
+    background-color: #7070ff;
+
+    width: auto;
+    height: 58%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    gap: 1%;
+}
+
+.unidade{
+    font-family: "Lexend";
+    font-size: 3vw;
+}
+
+.valor {
+    font-family: "Lexend";
+    font-size: 4vw;
+}
+
+
+
+
+
+
+.janela-quantidade {
+    display: flex;
+    align-items: center;
+    height: 28%;
+    margin: 2%;
+}
+
+.janela-guia-quantidade{
+    background-color: #7070ff;
+    display: flex;
+    border-radius: 8px;
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.guia-quantidade{
+    font-family: "Lexend";
+    font-size: 1.6vw;
+}
+
+
+
+.janela-indicador-quantidade{
+    background-color: white;
+    width: 30%;
+    border-radius: 8px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14%;
+}
+
+.indicador-quantidade{
+    font-family: "Lexend";
+    font-size: 3vw;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    border: none;
+    background-color: white;
+    font-size: 2vw;
+    align-items: center;
+    justify-content: center;
+
+}
+button:hover{
+    cursor: pointer;
+}
