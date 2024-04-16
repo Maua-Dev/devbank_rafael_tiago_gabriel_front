@@ -1,15 +1,11 @@
 .quadrado-geral{
     background-color: white;
-    width: 30%;
-    height: 300px;
+    width: 100%;
+    height: auto;
     border-radius: 8px;
-    margin: 5%;
+    margin: 1%;
     display: flow-root;
 }
-
-
-
-
 
 .janela-valor {
     border-radius: 8px;
@@ -35,16 +31,11 @@
     font-size: 4vw;
 }
 
-
-
-
-
-
 .janela-quantidade {
     display: flex;
     align-items: center;
-    height: 28%;
-    margin: 2%;
+    height: 20%;
+    margin-left: 2%;
 }
 
 .janela-guia-quantidade{
@@ -72,12 +63,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14%;
+    gap: 8%;
 }
 
 .indicador-quantidade{
     font-family: "Lexend";
-    font-size: 3vw;
+    font-size: 2vw;
     align-items: center;
     justify-content: center;
 }
