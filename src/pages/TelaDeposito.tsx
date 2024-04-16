@@ -12,7 +12,7 @@ export function TelaDeposito() {
   const requestApi = async () => {
      const response = await axios.get( api )
      setName(response.data.name)
-     setAgency(response.data.agency)
+     setAgency(response.data.agency) 
      setConta(response.data.account)
      setSaldo(response.data.current_balance)
   }
