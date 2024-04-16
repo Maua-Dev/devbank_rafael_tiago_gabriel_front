@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { /*useContext,*/ useEffect, useState } from 'react'
 import '../styles/Card.css'
+// import { ValoresDaConta } from '../contexts/assessment-context'
 
 interface CardProps {
   valor: number
@@ -8,6 +9,8 @@ interface CardProps {
 export default function Card({ valor}: CardProps) {
   
   const [quantidade, setQuantidade ] = useState(0)
+
+  // const { setNotas2, setNotas5, setNotas10, setNotas20, setNotas100, setNotas50, setNotas200 } = useContext(ValoresDaConta)
   
   const handleMinus = () => {
     if (quantidade > 0){
@@ -18,6 +21,24 @@ export default function Card({ valor}: CardProps) {
   const handlePlus = () => {
     setQuantidade((quantidadeAtual) => quantidadeAtual + 1)
   }
+
+  useEffect(() => {
+    // if (valor == 2) 
+    //   setNotas2(quantidade)
+    // else if (valor == 5) 
+    //   setNotas5(quantidade)
+    // else if (valor == 10) 
+    //   setNotas10(quantidade)
+    // else if (valor == 20) 
+    //   setNotas20(quantidade)
+    // else if (valor == 50) 
+    //   setNotas50(quantidade)
+    // else if (valor == 100) 
+    //   setNotas100(quantidade)
+    // else if (valor == 200) 
+    //   setNotas200(quantidade)
+ }, [quantidade])
+
 
   return (
     <div className='quadrado-geral'>

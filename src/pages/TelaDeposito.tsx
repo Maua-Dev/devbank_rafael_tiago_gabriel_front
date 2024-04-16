@@ -7,7 +7,7 @@ import "../styles/TelaDeposito.css"
  
 export function TelaDeposito() {
     
-    const { setName, setAgency, setConta, setSaldo, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
+  const { setName, setAgency, setConta, setSaldo, setTotal, /*notas2, notas5, notas10, notas20, notas50, notas100, notas200,*/ total, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
 
   const requestApi = async () => {
      const response = await axios.get( api )
@@ -23,11 +23,13 @@ export function TelaDeposito() {
   }
 
   const depositar = () => {
-    
+    // setTotal(notas2 + notas5 + notas10 + notas20 + notas50 + notas100 + notas200)
+    setSaldo(current_balance + total)
     navigate("/home")
   }
 
    useEffect(() => {
+      setTotal(0)
       requestApi()
    }, [])
 
@@ -53,7 +55,7 @@ export function TelaDeposito() {
 
           <div className="box-saldo">
             <div className="oq-fazer">
-              <h2>O que deseja Fazer?</h2>
+              <h2>O que deseja fazer?</h2>
             </div>
             <div className="saldo-box">
               <h2 className="saldo">Saldo atual: R$ {current_balance}</h2>
@@ -87,3 +89,4 @@ export function TelaDeposito() {
       </div>
     )
 }
+

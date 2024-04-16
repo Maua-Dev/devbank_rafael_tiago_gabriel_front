@@ -44,13 +44,12 @@ const depositar = () => {
           </h2>
         </div>
       </header>
-    
       <div className="janela-acoes">
         <div className="container-botoes-saldo">
 
           <div className="box-saldo">
             <div className="oq-fazer">
-              <h2>O que deseja Fazer?</h2>
+              <h2>O que deseja fazer?</h2>
             </div>
             <div className="saldo-box">
               <h2 className="saldo">Saldo atual: R$ {current_balance}</h2>
