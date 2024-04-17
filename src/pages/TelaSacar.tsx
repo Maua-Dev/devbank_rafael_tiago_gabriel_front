@@ -7,7 +7,7 @@ import "../styles/TelaSacar.css"
  
 export function TelaSacar() {
     
-  const { setName, setAgency, setConta, setSaldo, setTotal, /*notas2, notas5, notas10, notas20, notas50, notas100, notas200,*/ total, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
+  const { setName, setAgency, setConta, setSaldo, setTotal,notas2, notas5, notas10, notas20, notas50, notas100, notas200, total, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
 
   const requestApi = async () => {
      const response = await axios.get( api )
@@ -23,7 +23,7 @@ export function TelaSacar() {
   }
 
   const sacar = () => {
-    // setTotal(notas2 + notas5 + notas10 + notas20 + notas50 + notas100 + notas200)
+    setTotal(notas2 + notas5 + notas10 + notas20 + notas50 + notas100 + notas200)
 	setSaldo(current_balance - total)
     navigate("/home")
   }
