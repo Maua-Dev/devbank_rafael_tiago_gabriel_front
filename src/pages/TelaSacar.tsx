@@ -23,9 +23,8 @@ export function TelaSacar() {
   }
 
   const sacar = () => {
-    setTotal(notas2 + notas5 + notas10 + notas20 + notas50 + notas100 + notas200)
+    setTotal(notas2 * 2 + notas5 * 5 + notas10 * 10 + notas20 * 20 + notas50 * 50 + notas100 * 100 + notas200 * 200)
 	setSaldo(current_balance - total)
-    navigate("/home")
   }
 
    useEffect(() => {
