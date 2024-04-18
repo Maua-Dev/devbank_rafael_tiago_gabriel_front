@@ -23,7 +23,9 @@ export function TelaDeposito() {
   }
 
   const depositar = () => {
-    setTotal (valor2 + valor5 + valor10  + valor20 + valor50 + valor100 + valor200)
+    setTotal (valor2 + valor5 + valor10  + valor20 + valor50 + valor100 + valor200) //Os valores totais de cada nota serão atribuídos no card ao invés de mais um processo nessa função
+    //O valor de cada nota está normal, se eu colocar 5 valor de 5, valor5 aparece como 25
+    //O valor total está demorando uma ativação para setar, apesar de ter 25 reais selecionados, o total mostra 0 (Na primeira ativação)
     setSaldo(current_balance + total)
   }
 
