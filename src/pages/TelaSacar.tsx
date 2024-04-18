@@ -7,7 +7,7 @@ import "../styles/TelaSacar.css"
  
 export function TelaSacar() {
     
-  const { setName, setAgency, setConta, setSaldo, setTotal,notas2, notas5, notas10, notas20, notas50, notas100, notas200, total, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
+  const { setName, setAgency, setConta, setSaldo, setTotal,valor2, valor5, valor10, valor20, valor50, valor100, valor200, total, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
 
   const requestApi = async () => {
      const response = await axios.get( api )
@@ -23,12 +23,13 @@ export function TelaSacar() {
   }
 
   const sacar = () => {
-    setTotal(notas2 * 2 + notas5 * 5 + notas10 * 10 + notas20 * 20 + notas50 * 50 + notas100 * 100 + notas200 * 200)
+    setTotal (valor2 + valor5 + valor10  + valor20 + valor50 + valor100 + valor200)
+	//O valor de cada nota está normal, se eu colocar 5 valor de 5, valor5 aparece como 25
+	//O valor total está demorando uma ativação para setar, apesar de ter 25 reais selecionados, o total mostra 0 (Na primeira ativação)
 	setSaldo(current_balance - total)
   }
 
    useEffect(() => {
-		setTotal(0)
     	requestApi()
    }, [])
 
@@ -62,15 +63,16 @@ export function TelaSacar() {
 						</div>
 					<div className="box-cedulas">
 						<div className="box-cedulas-cima">
-							<Card valor={2}/>
-							<Card valor={5}/>
-							<Card valor={10}/>
-							<Card valor={20}/>
+							<Card nota={2}/>
+							<Card nota={5}/>
+							<Card nota={10}/>
+							<Card nota={20}/>
 						</div>
+						<br/>
 						<div className="box-cedulas-baixo">
-							<Card valor={50}/>
-							<Card valor={100}/>
-							<Card valor={200}/>
+							<Card nota={50}/>
+							<Card nota={100}/>
+							<Card nota={200}/>
 						</div>
 					</div>
 				</div>

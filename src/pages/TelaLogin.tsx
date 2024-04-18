@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import '../styles/TelaDaConta.css'
+import '../styles/TelaLogin.css'
 import { ValoresDaConta } from '../contexts/assessment-context'
 import { useNavigate } from 'react-router-dom'
 

@@ -1,12 +1,12 @@
 import { Link, useNavigate } from "react-router-dom"
-import "../styles/TelaInicial.css"
+import "../styles/TelaHome.css"
 import axios from "axios"
 import { useContext, useEffect } from "react"
 import { ValoresDaConta } from "../contexts/assessment-context"
 
 function Telainicial() {
 
-  const { setName, setAgency, setConta, setSaldo, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
+  const { setName, setAgency, setConta, setSaldo, setTotal, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
 
   const requestApi = async () => {
      const response = await axios.get( api )
@@ -17,7 +17,8 @@ function Telainicial() {
   }
 
    useEffect(() => {
-      requestApi()
+    setTotal(0)
+    requestApi()
    }, [])
 
 const navigate = useNavigate()

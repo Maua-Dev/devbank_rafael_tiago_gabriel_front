@@ -7,13 +7,13 @@ type ValoresDaContaType = {
     account: string,
     current_balance: number,
     total: number,
-    notas2: number,
-    notas5: number,
-    notas10: number,
-    notas20: number,
-    notas50: number,
-    notas100: number,
-    notas200: number,
+    valor2: number,
+    valor5: number,
+    valor10: number,
+    valor20: number,
+    valor50: number,
+    valor100: number,
+    valor200: number,
 
     setApi: React.Dispatch<React.SetStateAction<string>>,
     setName: React.Dispatch<React.SetStateAction<string>>,
@@ -21,13 +21,13 @@ type ValoresDaContaType = {
     setConta: React.Dispatch<React.SetStateAction<string>>,
     setSaldo: React.Dispatch<React.SetStateAction<number>>,
     setTotal: React.Dispatch<React.SetStateAction<number>>,
-    setNotas2: React.Dispatch<React.SetStateAction<number>>,
-    setNotas5: React.Dispatch<React.SetStateAction<number>>,
-    setNotas10: React.Dispatch<React.SetStateAction<number>>,
-    setNotas20: React.Dispatch<React.SetStateAction<number>>,
-    setNotas50: React.Dispatch<React.SetStateAction<number>>,
-    setNotas100: React.Dispatch<React.SetStateAction<number>>,
-    setNotas200: React.Dispatch<React.SetStateAction<number>>,
+    setValor2: React.Dispatch<React.SetStateAction<number>>,
+    setValor5: React.Dispatch<React.SetStateAction<number>>,
+    setValor10: React.Dispatch<React.SetStateAction<number>>,
+    setValor20: React.Dispatch<React.SetStateAction<number>>,
+    setValor50: React.Dispatch<React.SetStateAction<number>>,
+    setValor100: React.Dispatch<React.SetStateAction<number>>,
+    setValor200: React.Dispatch<React.SetStateAction<number>>,
 }
 
 const defaultValoresDaConta: ValoresDaContaType = {
@@ -37,13 +37,13 @@ const defaultValoresDaConta: ValoresDaContaType = {
     account: "",
     current_balance: 0,
     total: 0,
-    notas2: 0,
-    notas5: 0,
-    notas10: 0,
-    notas20: 0,
-    notas50: 0,
-    notas100: 0,
-    notas200: 0,
+    valor2: 0,
+    valor5: 0,
+    valor10: 0,
+    valor20: 0,
+    valor50: 0,
+    valor100: 0,
+    valor200: 0,
 
     setApi: ()=> {},
     setName: ()=> {},
@@ -51,13 +51,13 @@ const defaultValoresDaConta: ValoresDaContaType = {
     setConta: ()=> {},
     setSaldo: ()=> {},
     setTotal: ()=> {},
-    setNotas2: ()=> {},
-    setNotas5: ()=> {},
-    setNotas10: ()=> {},
-    setNotas20: ()=> {},
-    setNotas50: ()=> {},
-    setNotas100: ()=> {},
-    setNotas200: ()=> {},
+    setValor2: ()=> {},
+    setValor5: ()=> {},
+    setValor10: ()=> {},
+    setValor20: ()=> {},
+    setValor50: ()=> {},
+    setValor100: ()=> {},
+    setValor200: ()=> {},
 }
 
 export const ValoresDaConta = createContext<ValoresDaContaType>(defaultValoresDaConta);
@@ -69,13 +69,13 @@ export const DadosConta = ({ children }: { children: ReactNode }) => {
     const [account,setConta] = useState<string>("")
     const [current_balance,setSaldo] = useState<number>(0)
     const [total,setTotal] = useState<number>(0)
-    const [notas2,setNotas2] = useState<number>(0)
-    const [notas5,setNotas5] = useState<number>(0)
-    const [notas10,setNotas10] = useState<number>(0)
-    const [notas20,setNotas20] = useState<number>(0)
-    const [notas50,setNotas50] = useState<number>(0)
-    const [notas100,setNotas100] = useState<number>(0)
-    const [notas200,setNotas200] = useState<number>(0)
+    const [valor2,setValor2] = useState<number>(0)
+    const [valor5,setValor5] = useState<number>(0)
+    const [valor10,setValor10] = useState<number>(0)
+    const [valor20,setValor20] = useState<number>(0)
+    const [valor50,setValor50] = useState<number>(0)
+    const [valor100,setValor100] = useState<number>(0)
+    const [valor200,setValor200] = useState<number>(0)
 
 
     return (
@@ -92,20 +92,20 @@ export const DadosConta = ({ children }: { children: ReactNode }) => {
             setSaldo,
             total,
             setTotal,
-            notas2,
-            setNotas2,
-            notas5,
-            setNotas5,
-            notas10,
-            setNotas10,
-            notas20,
-            setNotas20,
-            notas50,
-            setNotas50,
-            notas100,
-            setNotas100,
-            notas200,
-            setNotas200,
+            valor2,
+            setValor2,
+            valor5,
+            setValor5,
+            valor10,
+            setValor10,
+            valor20,
+            setValor20,
+            valor50,
+            setValor50,
+            valor100,
+            setValor100,
+            valor200,
+            setValor200,
          }}>
             { children }
         </ValoresDaConta.Provider>
