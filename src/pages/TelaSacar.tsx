@@ -7,7 +7,7 @@ import "../styles/TelaSacar.css"
  
 export function TelaSacar() {
     
-  const { setName, setAgency, setConta, setSaldo, setTotal,valor2, valor5, valor10, valor20, valor50, valor100, valor200, total, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
+  const { setName, setAgency, setConta, setSaldo, valor2, valor5, valor10, valor20, valor50, valor100, valor200, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
 
   const requestApi = async () => {
      const response = await axios.get( api )
@@ -22,11 +22,18 @@ export function TelaSacar() {
     navigate("/home")
   }
 
-  const sacar = () => {
-    setTotal (valor2 + valor5 + valor10  + valor20 + valor50 + valor100 + valor200) //Os valores totais de cada nota serão atribuídos no card ao invés de mais um processo nessa função
-	//O valor de cada nota está normal, se eu colocar 5 valor de 5, valor5 aparece como 25
-	//O valor total está demorando uma ativação para setar, apesar de ter 25 reais selecionados, o total mostra 0 (Na primeira ativação)
-	setSaldo(current_balance - total)
+  const sacar = async () => {
+	const response = await axios.post(api + "/withdraw", {
+		"2": valor2,
+		"5": valor5,
+		"10": valor10,
+		"20": valor20,
+		"50": valor50,
+		"100": valor100,
+		"200": valor200
+	  })
+	  setSaldo(response.data.current_balance)
+	  navigate("/home")
   }
 
    useEffect(() => {

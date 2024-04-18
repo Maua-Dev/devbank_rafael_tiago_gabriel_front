@@ -13,7 +13,7 @@ type ValoresDaContaType = {
     valor20: number,
     valor50: number,
     valor100: number,
-    valor200: number, //Mudados o nome de cada variavel de notas, ao invés de guardar a quantidade apenas, eles vão abrigar a quantidade x valor da nota
+    valor200: number, 
 
     setApi: React.Dispatch<React.SetStateAction<string>>,
     setName: React.Dispatch<React.SetStateAction<string>>,
@@ -27,7 +27,7 @@ type ValoresDaContaType = {
     setValor20: React.Dispatch<React.SetStateAction<number>>,
     setValor50: React.Dispatch<React.SetStateAction<number>>,
     setValor100: React.Dispatch<React.SetStateAction<number>>,
-    setValor200: React.Dispatch<React.SetStateAction<number>>, //Mudados o nome de cada variavel de notas, ao invés de guardar a quantidade apenas, eles vão abrigar a quantidade x valor da nota
+    setValor200: React.Dispatch<React.SetStateAction<number>>, 
 }
 
 const defaultValoresDaConta: ValoresDaContaType = {
@@ -43,7 +43,7 @@ const defaultValoresDaConta: ValoresDaContaType = {
     valor20: 0,
     valor50: 0,
     valor100: 0,
-    valor200: 0, //Mudados o nome de cada variavel de notas, ao invés de guardar a quantidade apenas, eles vão abrigar a quantidade x valor da nota
+    valor200: 0, 
 
     setApi: ()=> {},
     setName: ()=> {},
@@ -57,7 +57,7 @@ const defaultValoresDaConta: ValoresDaContaType = {
     setValor20: ()=> {},
     setValor50: ()=> {},
     setValor100: ()=> {},
-    setValor200: ()=> {}, //Mudados o nome de cada variavel de notas, ao invés de guardar a quantidade apenas, eles vão abrigar a quantidade x valor da nota
+    setValor200: ()=> {}, 
 }
 
 export const ValoresDaConta = createContext<ValoresDaContaType>(defaultValoresDaConta);
@@ -75,7 +75,7 @@ export const DadosConta = ({ children }: { children: ReactNode }) => {
     const [valor20,setValor20] = useState<number>(0)
     const [valor50,setValor50] = useState<number>(0)
     const [valor100,setValor100] = useState<number>(0)
-    const [valor200,setValor200] = useState<number>(0) //Mudados o nome de cada variavel de notas, ao invés de guardar a quantidade apenas, eles vão abrigar a quantidade x valor da nota
+    const [valor200,setValor200] = useState<number>(0) 
 
 
     return (
@@ -105,7 +105,7 @@ export const DadosConta = ({ children }: { children: ReactNode }) => {
             valor100,
             setValor100,
             valor200,
-            setValor200, //Mudados o nome de cada variavel de notas, ao invés de guardar a quantidade apenas, eles vão abrigar a quantidade x valor da nota
+            setValor200,
          }}>
             { children }
         </ValoresDaConta.Provider>

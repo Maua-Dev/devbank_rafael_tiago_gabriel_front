@@ -24,19 +24,19 @@ export default function Card({nota}: CardProps) {
 
   useEffect(() => {
     if (nota == 2) 
-      setValor2(quantidade*2)       //Mudados o nome de cada variavel de notas, ao invés de guardar a quantidade apenas, eles vão abrigar a quantidade x valor da nota
+      setValor2(quantidade)       //Mudados o nome de cada variavel de notas, ao invés de guardar a quantidade apenas, eles vão abrigar a quantidade x valor da nota
     else if (nota == 5)             //Troquei/inverti o nome das variáveis nota e valor, agr nota é a valor que colocamos para aparecer da cédula (R${Nota}) e valor é a variável do context q abrigará os valores de cada cédula(card) individual
-      setValor5(quantidade*5)
+      setValor5(quantidade)
     else if (nota == 10) 
-      setValor10(quantidade*10)
+      setValor10(quantidade)
     else if (nota == 20) 
-      setValor20(quantidade*20)
+      setValor20(quantidade)
     else if (nota == 50) 
-      setValor50(quantidade*50)
+      setValor50(quantidade)
     else if (nota == 100) 
-      setValor100(quantidade*100)
+      setValor100(quantidade)
     else if (nota == 200) 
-      setValor200(quantidade*200) 
+      setValor200(quantidade) 
  }, [quantidade])
 
 
