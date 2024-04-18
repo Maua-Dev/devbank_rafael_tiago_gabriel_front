@@ -6,7 +6,6 @@ type ValoresDaContaType = {
     agency: string,
     account: string,
     current_balance: number,
-    total: number,
     valor2: number,
     valor5: number,
     valor10: number,
@@ -20,7 +19,6 @@ type ValoresDaContaType = {
     setAgency: React.Dispatch<React.SetStateAction<string>>,
     setConta: React.Dispatch<React.SetStateAction<string>>,
     setSaldo: React.Dispatch<React.SetStateAction<number>>,
-    setTotal: React.Dispatch<React.SetStateAction<number>>,
     setValor2: React.Dispatch<React.SetStateAction<number>>,
     setValor5: React.Dispatch<React.SetStateAction<number>>,
     setValor10: React.Dispatch<React.SetStateAction<number>>,
@@ -36,7 +34,6 @@ const defaultValoresDaConta: ValoresDaContaType = {
     agency: "",
     account: "",
     current_balance: 0,
-    total: 0,
     valor2: 0,
     valor5: 0,
     valor10: 0,
@@ -50,7 +47,6 @@ const defaultValoresDaConta: ValoresDaContaType = {
     setAgency: ()=> {},
     setConta: ()=> {},
     setSaldo: ()=> {},
-    setTotal: ()=> {},
     setValor2: ()=> {},
     setValor5: ()=> {},
     setValor10: ()=> {},
@@ -68,7 +64,6 @@ export const DadosConta = ({ children }: { children: ReactNode }) => {
     const [agency,setAgency] = useState<string>("")
     const [account,setConta] = useState<string>("")
     const [current_balance,setSaldo] = useState<number>(0)
-    const [total,setTotal] = useState<number>(0)
     const [valor2,setValor2] = useState<number>(0)
     const [valor5,setValor5] = useState<number>(0)
     const [valor10,setValor10] = useState<number>(0)
@@ -90,8 +85,6 @@ export const DadosConta = ({ children }: { children: ReactNode }) => {
             setConta,
             current_balance,
             setSaldo,
-            total,
-            setTotal,
             valor2,
             setValor2,
             valor5,

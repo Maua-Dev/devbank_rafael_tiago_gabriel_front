@@ -6,7 +6,7 @@ import { ValoresDaConta } from "../contexts/assessment-context"
 
 function Telainicial() {
 
-  const { setName, setAgency, setConta, setSaldo, setTotal, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
+  const { setName, setAgency, setConta, setSaldo, setValor2, setValor5, setValor10, setValor20, setValor50, setValor100, setValor200, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
 
   const requestApi = async () => {
      const response = await axios.get( api )
@@ -17,7 +17,13 @@ function Telainicial() {
   }
 
    useEffect(() => {
-    setTotal(0)
+    setValor2(0)
+    setValor5(0)
+    setValor10(0)
+    setValor20(0)
+    setValor50(0)
+    setValor100(0)
+    setValor200(0)
     requestApi()
    }, [])
 
