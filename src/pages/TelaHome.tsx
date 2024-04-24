@@ -35,6 +35,9 @@ const sacar = () => {
 const depositar = () => {
   navigate("/depositar")
 }
+const transacoes = () => {
+  navigate('/transacoes')
+}
 
 
     return (
@@ -65,7 +68,7 @@ const depositar = () => {
             <div className="box-acoes">
               <button className="botoes-banco" onClick={sacar}>Sacar <img src="src/img/sacar.png" width={160}/> </button>
               <button className="botoes-banco" onClick={depositar}>Depositar <img src="src/img/depositar.png" width={160}/> </button>
-              <button className="botoes-banco" >Transações <img src="src/img/transacao.png" width={160}/> </button>
+              <button className="botoes-banco" onClick={transacoes}>Transações <img src="src/img/transacao.png" width={160}/> </button>
             </div>
             <div className="bottom">
               <Link to="/"><button className="botao-voltar">Voltar</button></Link>
