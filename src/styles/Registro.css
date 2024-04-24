@@ -1,0 +1,43 @@
+
+.quadro-total{
+    height: 160px;
+    width: 95%;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.tipo {
+    height: 24%;
+    width: 98%;
+    background-color: red;
+    margin-top: 1%;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0;
+    font-family: "lexend";
+}
+
+.textos {
+    display: flex;
+    width: 100%;
+    height: 66%;
+    flex-direction: row;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto{
+    height: 90%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "lexend";
+}
