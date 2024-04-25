@@ -17,6 +17,7 @@ export function TelaTransacoes() {
   const requestHistory = async () => {
     const response = await axios.get(api + "/history")
     const totalTransacoes = response.data.all_transactions
+    console.log(totalTransacoes)
   }
 
   useEffect(() => {
