@@ -1,10 +1,12 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import '../styles/TelaLogin.css'
 import { ValoresDaConta } from '../contexts/assessment-context'
 import { useNavigate } from 'react-router-dom'
+import Alert from '@mui/material/Alert';
+
 
 function TelaDaConta() {
-
+  const [isAPIcolocada, setAPIcolocada] = useState<boolean>(false)
   const { api, setApi } = useContext(ValoresDaConta)
   const navigate = useNavigate()
   
@@ -15,7 +17,7 @@ function TelaDaConta() {
       navigate("/home")
     }
     else {
-      alert("Coloque a api correta!")
+      setAPIcolocada(true)
     }
   }
   
@@ -30,6 +32,7 @@ function TelaDaConta() {
             <header>
               <img src="src/img/image.webp" className='centro-imagem-login' />
             </header>
+            {isAPIcolocada ? <Alert variant='filled' severity='error'>ERRO! Coloque uma API válida</Alert> : null}
             <div className='janela-input'>
               <h1 className='instrucoes'>Coloque o link da sua conta:</h1>
               <input id="validarApi" name="" className='input-box' onChange={(event) => setApi(event.target.value)}/>
