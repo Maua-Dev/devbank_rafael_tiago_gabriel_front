@@ -1,13 +1,15 @@
 import { /*Link,*/ useNavigate } from "react-router-dom";
 import Card from '../components/Card'
-import { useContext, useEffect } from "react";
-import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import axios, { isAxiosError } from "axios";
 import { ValoresDaConta } from "../contexts/assessment-context";
 import "../styles/TelaDeposito.css"
+import Alert from "@mui/material/Alert";
  
 export function TelaDeposito() {
     
   const  { setName, setAgency, setConta, setSaldo, valor2, valor5, valor10, valor20, valor50, valor100, valor200, api, name, agency, account, current_balance} = useContext(ValoresDaConta)
+  const [isErro, setErro] = useState<string>('')
 
   const requestApi = async () => {
      const response = await axios.get( api )
@@ -23,17 +25,23 @@ export function TelaDeposito() {
   }
 
   const depositar = async () => {
-    const response = await axios.post(api + "/deposit", {
-      "2": valor2,
-      "5": valor5,
-      "10": valor10,
-      "20": valor20,
-      "50": valor50,
-      "100": valor100,
-      "200": valor200
-    })
-    setSaldo(response.data.current_balance)
-    navigate("/home")
+    try{
+      const response = await axios.post(api + "/deposit", {
+        "2": valor2,
+        "5": valor5,
+        "10": valor10,
+        "20": valor20,
+        "50": valor50,
+        "100": valor100,
+        "200": valor200
+      })
+      setSaldo(response.data.current_balance)
+      navigate("/home")
+    } catch (e) {
+      if (isAxiosError(e)){
+        setErro(e.response?.data.detail)
+      }
+    }
   }
 
    useEffect(() => {
@@ -60,28 +68,29 @@ export function TelaDeposito() {
 
           <div className="box-saldo">
             <div className="oq-fazer">
-              <h2>O que deseja fazer?</h2>
+              <h2 className="saldo">Saldo atual: R$ {current_balance}</h2>
             </div>
             <div className="saldo-box">
-              <h2 className="saldo">Saldo atual: R$ {current_balance}</h2>
+              <h2 className="saldo">Total: R${valor2*2+valor5*5+valor10*10+valor20*20+valor50*50+valor100*100+valor200*200}</h2>
             </div>
           </div>
             <div className="Texto-Cedulas">
                 <div className="TextoGuia">
-                    Selecione as cédulas e a quantidade que você deseja.
+                  Selecione as cédulas que você deseja depositar.
+                  {isErro != "" ? <Alert severity="error" variant='filled'>Erro!<br/>{isErro}</Alert> : null}
                 </div>
                 <div className="box-cedulas">
                     <div className="box-cedulas-cima">
-                        <Card nota={2}/>
-                        <Card nota={5}/>
-                        <Card nota={10}/>
-                        <Card nota={20}/>
+                      <Card nota={2}/>
+                      <Card nota={5}/>
+                      <Card nota={10}/>
+                      <Card nota={20}/>
                     </div>
                     <br/>
                     <div className="box-cedulas-baixo">
-                        <Card nota={50}/>
-                        <Card nota={100}/>
-                        <Card nota={200}/>
+                      <Card nota={50}/>
+                      <Card nota={100}/>
+                      <Card nota={200}/>
                     </div>
             </div>
             </div>

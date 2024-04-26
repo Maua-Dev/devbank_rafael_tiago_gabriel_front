@@ -5,7 +5,7 @@ import '../styles/Registro.css'
 interface registroProps{
     tipo: string;
     valor: number;
-    data: number;
+    data: string;
     saldo: number;
 }
 
@@ -27,9 +27,9 @@ export default function Registro({tipo, valor, data, saldo}: registroProps){
                 {isDeposit ? "DEPÓSITO" : "SAQUE"}
             </div>
             <div className='textos'>
-                <div className="texto">VALOR: R${valor}</div>
-                <div className="texto">DATA: {data}</div>
-                <div className="texto">SALDO: R${saldo}</div>
+                <div className="texto">VALOR: <br/> R${valor}</div>
+                <div className="texto">DATA: <br/> {data}</div>
+                <div className="texto">SALDO: <br/> R${saldo}</div>
             </div>
         </div>
     )

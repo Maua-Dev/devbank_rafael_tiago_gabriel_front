@@ -54,7 +54,7 @@ body {
 }
 
 .janela-acoes{
-    height: 86%;
+    height: 84vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -124,6 +124,9 @@ body {
 
 .texto-guia{
     width: 17%;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
     font-family: "Lexend";
     font-size: 2vw;
     color: white;

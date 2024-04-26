@@ -1,13 +1,14 @@
 
 .quadro-total{
-    height: 180px;
+    height: auto;
     width: 95%;
     margin: 1%;
-    background-color: rgba(236, 236, 236, 0.925);
+    background-color: rgb(255, 255, 255);
     align-items: center;
     display: flex;
     flex-direction: column;
     border-radius: 8px;
+    margin-bottom: 2%;
 }
 
 .tipo {
