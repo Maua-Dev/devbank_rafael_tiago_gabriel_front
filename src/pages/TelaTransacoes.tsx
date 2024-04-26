@@ -26,28 +26,31 @@ export function TelaTransacoes() {
 
   return (
     <div className="bottom">
-      <div className="TelaInicial">
-			<header className="Header">
-				<div>
-					<img src ="src/img/image.webp" className="centro-imagem" />
-				</div>
-				<div className="box-dados-conta">
-					<h2 className="dados-conta">
-						Nome: {name}<br/>
-						Agência: {agency}<br/>
-						Conta: {account}
-					</h2>
-				</div>
-			</header>
-			<div className="janela-acoes">
-				<div className="container-botoes-saldo">
-          <Registro tipo={'saque'} valor={0} data={0} saldo={0}></Registro>
-      <button className="botao-voltar" onClick={voltar}>
-        Voltar
-      </button>
-			</div>
-    </div>
-    </div>
+      <div className="TelaInicial-transacoes">
+        <header className="Header">
+          <div>
+            <img src ="src/img/image.webp" className="centro-imagem" />
+          </div>
+          <div className="box-dados-conta">
+            <h2 className="dados-conta">
+              Nome: {name}<br/>
+              Agência: {agency}<br/>
+              Conta: {account}
+            </h2>
+          </div>
+        </header>
+        <div className="janela-acoes-transacoes">
+          <div className="container-botoes-saldo-transacoes">
+            <div className='voltar'>
+              <button className="botao-voltar-transacoes" onClick={voltar}>VOLTAR</button>
+            </div>
+            <div className='registros'>
+              <Registro tipo={'saque'} valor={0} data={0} saldo={0}></Registro>
+              <Registro tipo={'deposit'} valor={0} data={0} saldo={0}></Registro>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

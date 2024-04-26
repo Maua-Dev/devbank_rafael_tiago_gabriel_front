@@ -54,7 +54,7 @@ const transacoes = () => {
           </h2>
         </div>
       </header>
-      <div className="janela-acoes">
+      <div className="janela-acoes-home">
         <div className="container-botoes-saldo">
 
           <div className="box-saldo">

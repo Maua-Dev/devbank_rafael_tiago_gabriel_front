@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import '../styles/Registro.css'
 
 
@@ -9,10 +10,21 @@ interface registroProps{
 }
 
 export default function Registro({tipo, valor, data, saldo}: registroProps){
+
+    const [isDeposit, setDeposit] = useState<boolean>(false)
+
+    useEffect(() => {
+        if (tipo === 'deposit') {
+            setDeposit(true);
+        } else {
+            setDeposit(false);
+        }
+    }, [tipo]);
+    
     return (
         <div className="quadro-total">
-            <div className="tipo">
-                {tipo}
+            <div className={isDeposit ? 'tipo-deposito' : 'tipo'}>
+                {isDeposit ? "DEPÓSITO" : "SAQUE"}
             </div>
             <div className='textos'>
                 <div className="texto">VALOR: R${valor}</div>

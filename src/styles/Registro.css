@@ -1,8 +1,9 @@
 
 .quadro-total{
-    height: 160px;
+    height: 180px;
     width: 95%;
-    background-color: white;
+    margin: 1%;
+    background-color: rgba(236, 236, 236, 0.925);
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -11,8 +12,8 @@
 
 .tipo {
     height: 24%;
-    width: 98%;
-    background-color: red;
+    width: 96%;
+    background-color: rgb(255, 0, 0);
     margin-top: 1%;
     border-radius: 8px;
     align-items: center;
@@ -20,6 +21,23 @@
     text-align: center;
     gap: 0;
     font-family: "lexend";
+    padding: 1%;
+    font-size: 2vw;
+}
+
+.tipo-deposito {
+    height: 24%;
+    width: 96%;
+    background-color: rgb(3, 212, 3);
+    margin-top: 1%;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0;
+    font-family: "lexend";
+    padding: 1%;
+    font-size: 2vw;
 }
 
 .textos {
@@ -40,4 +58,5 @@
     align-items: center;
     justify-content: center;
     font-family: "lexend";
+    font-size: 1.6vw;
 }
